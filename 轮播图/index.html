@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="total">
+        <ul id="banner">
+            <li><img src="images/a01.jpg" alt=""></li>
+            <li><img src="images/a02.jpg" alt=""></li>
+            <li><img src="images/a03.jpg" alt=""></li>
+            <li><img src="images/a01.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        let maxlen = document.getElementById("banner").getElementsByTagName("li").length - 1;
+        console.log(maxlen);
+        let curindex = 0;
+        let timer = null;
+
+        function change_auto(){
+            if(curindex < maxlen){
+                curindex++;
+                get_next();
+            }else{
+                curindex = 0;
+                get_reset();
+            }
+        }
+        timer = setInterval(change_auto, 1000);
+
+        let width = 632;
+        function get_next(){
+            let totalbanner = document.getElementById("banner");
+            totalbanner.style.marginLeft = "-"+width*curindex+"px";
+            totalbanner.style.transition = "0.3s";
+        }
+
+        function get_reset(){
+            let totalbanner = document.getElementById("banner");
+            totalbanner.style.marginLeft = "0px";
+            totalbanner.style.transition = "0s";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.total{
+    width: 632px;
+    height: 340px;
+    overflow: hidden;
+    margin: 100px auto;
+}
+
+#banner{
+    width: 2528px;
+    height: 340px;
+}
+li{
+    height: 340px;
+    width: 632px;
+    float: left;
+    list-style: none;
+}
